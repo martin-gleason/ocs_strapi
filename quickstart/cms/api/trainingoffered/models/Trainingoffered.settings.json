@@ -1,0 +1,36 @@
+{
+  "connection": "postgres",
+  "collectionName": "trainingsoffered",
+  "info": {
+    "name": "trainingoffered",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "title_of_training": {
+      "type": "string"
+    },
+    "length": {
+      "type": "integer"
+    },
+    "training_id": {
+      "type": "integer"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "category": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "connection": "postgres",
+  "collectionName": "divisions",
+  "info": {
+    "name": "division",
+    "description": "Division Model from db"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "division_id": {
+      "type": "integer",
+      "unique": true,
+      "required": true
+    },
+    "division_name": {
+      "type": "string"
+    }
+  }
+}

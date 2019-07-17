@@ -1,0 +1,35 @@
+{
+  "connection": "postgres",
+  "collectionName": "trainings",
+  "info": {
+    "name": "training",
+    "description": "model of trainings, attached to postgres 11 db\n"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "training_id": {
+      "type": "integer",
+      "unique": true,
+      "required": true
+    },
+    "title_of_training": {
+      "required": true,
+      "default": "null",
+      "type": "string"
+    },
+    "length": {
+      "type": "integer",
+      "default": "30",
+      "required": true
+    },
+    "category": {
+      "default": "case management",
+      "required": true,
+      "type": "string"
+    }
+  }
+}

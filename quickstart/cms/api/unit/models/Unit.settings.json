@@ -1,0 +1,26 @@
+{
+  "connection": "postgres",
+  "collectionName": "unit",
+  "info": {
+    "name": "unit",
+    "description": "model for the unit table.\n"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "unit_name": {
+      "type": "string"
+    },
+    "unit_id": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    }
+  }
+}

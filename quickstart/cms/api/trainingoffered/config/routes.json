@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/trainingoffereds",
+      "handler": "Trainingoffered.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/trainingoffereds/count",
+      "handler": "Trainingoffered.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/trainingoffereds/:id",
+      "handler": "Trainingoffered.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/trainingoffereds",
+      "handler": "Trainingoffered.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/trainingoffereds/:id",
+      "handler": "Trainingoffered.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/trainingoffereds/:id",
+      "handler": "Trainingoffered.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

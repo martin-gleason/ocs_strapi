@@ -1,0 +1,51 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-bookshelf",
+      "settings": {
+        "client": "sqlite3",
+        "filename": ".tmp/data.db",
+        "enabled": true,
+        "defaultConnection": "default",
+        "host": "127.0.0.1"
+      },
+      "options": {
+        "useNullAsDefault": true,
+        "debug": true
+      }
+    },
+    "postgres": {
+      "connector": "strapi-hook-bookshelf",
+      "settings": {
+        "client": "pg",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "database": "training_db",
+        "username": "marty",
+        "password": "bricu1916",
+        "enabled": true,
+        "defaultConnection": "default"
+      },
+      "options": {
+        "debug": true
+      }
+    },
+    "vendors": {
+      "connector": "strapi-hook-bookshelf",
+      "settings": {
+        "client": "postgres",
+        "host": "127.0.0.1",
+        "port": 5432,
+        "database": "providers",
+        "username": "marty",
+        "password": "bricu1916",
+        "enabled": true,
+        "defaultConnection": "default"
+      },
+      "options": {
+        "debug": true
+      }
+    }
+  }
+}
