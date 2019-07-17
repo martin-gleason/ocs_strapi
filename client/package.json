@@ -1,7 +1,7 @@
 {
   "name": "ocs_strapi",
   "version": "1.0.0",
-  "description": "nuxt JS/Vue components ",
+  "description": "OCS intranet project",
   "author": "marty-gleason <officergleason@gmail.com>",
   "private": true,
   "scripts": {

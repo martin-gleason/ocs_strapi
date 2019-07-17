@@ -1,4 +1,8 @@
 module.exports = {
+  modules: [
+    'bootstrap-vue/nuxt'
+  ],
+
   /*
   ** Headers of the page
   */
@@ -7,7 +11,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'nuxt JS/Vue components ' }
+      { hid: 'description', name: 'description', content: 'OCS intranet project' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -16,11 +20,12 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#0A2463' },
+  loading: { color: '#3B8070' },
   /*
   ** Build configuration
   */
   build: {
+    
     /*
     ** Run ESLint on save
     */
@@ -34,9 +39,7 @@ module.exports = {
         })
       }
     }
-    modules: [
-      'bootstrap-vue/nuxt',
-    ]
+    
   }
 }
 

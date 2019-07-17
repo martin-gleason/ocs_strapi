@@ -1,33 +1,67 @@
 <template>
   <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        ocs_strapi
-      </h1>
-      <h2 class="subtitle">
-        nuxt JS/Vue components 
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
+      <div class="row">
+         <h2>Training Search Form</h2>
+        <div class="col-md-12">
+          <div class="form-group m-t5">
+            <input v-model="query" type="text" classs="form-control" placeholder="Find training titles...">
+          </div>
+        </div>
     </div>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="card columns list-unstyled">
+          <li v-for="trainings in filteredList" :key="training_id" class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{trainings.title_of_training }}</h5>
+            <router-link :to="{ name: 'training_id', params: {id: training_id}}" tag="a" class="btn btn-primary">
+              filler
+            </router-link>
+          </div>
+          </li>
+          <p v-if="!filteredList.lenght">No Results :(</p>
+          </ul>
+    </div>
+  </div>
   </section>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import Strapi from 'strapi-sdk-javascript/build/main'
+const apiURL = process.env.API_URL || 'http://localhost:1337'
+const strapi = new Strapi(apiURL)
 
-export default {
-  components: {
-    AppLogo
+export default{
+  data() {
+    return{
+      query:''
+    }
+  },
+  computed: {
+    filteredList(){
+      return this.training.filter(trainings =>{
+        return trainings.title_of_training.toTitleCase().includes(this.query.toTitleCase())
+      })
+    },
+    training(){
+      return this.$store.getters['trainings/list']
+    }
+
+  },
+  async fetch({ store }){
+    store.commit('trainings/emptyList')
+    const response = await strapi.request('post', '/graphql', {
+      data: {
+        query: `query {
+          trainings {
+            training_id
+            title_of_training
+            length
+            category
+          }
+        }`
+      }
+    })
   }
 }
 </script>

@@ -1,6 +1,6 @@
 # ocs_strapi
 
-> nuxt JS/Vue components 
+> OCS intranet project
 
 ## Build Setup
 
